@@ -1,5 +1,6 @@
 package net.gloowa.tests.simplemvc.service;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,7 @@ public class TestService {
 		public int value;
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping(path = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
 	public String index() {
 		return "index";
 	}
