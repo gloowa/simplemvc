@@ -30,7 +30,8 @@ public class TestService {
 		String result = null;
 		try {
 			result = om.writeValueAsString(tb);
-		} catch (JsonProcessingException e) {
+			throw new Exception("Fake excpetion");
+		} catch (Exception e) {
 			e.printStackTrace();
 			try {
 				result = om.writeValueAsString(e);
