@@ -26,19 +26,17 @@ public class TestService {
 		tb.name = "ASDF";
 		tb.value = 69;
 		
-		ObjectMapper om = new ObjectMapper();
-		
 		String result = null;
 		try {
-			result = om.writeValueAsString(tb);
+			result = JSONEncoder.toJSON(tb);
 			throw new Exception("Fake excpetion");
 		} catch (Exception e) {
 			e.printStackTrace();
 			try {
-				result = om.writeValueAsString(e);
+				result = JSONEncoder.toJSON(e);
 			} catch (JsonProcessingException e1) {
 				e1.printStackTrace();
-				result = e1.getMessage();
+				result = "{}";
 			}
 		} 
 		
