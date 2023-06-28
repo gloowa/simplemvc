@@ -15,12 +15,12 @@ public class TestService {
 		public int value;
 	}
 	
-	@RequestMapping(path = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
+	@RequestMapping(path = "/", produces = {MediaType.TEXT_PLAIN_VALUE})
 	public String index() {
 		return "index";
 	}
 	
-	@RequestMapping("/asdf")
+	@RequestMapping(path = "/asdf", produces = {MediaType.APPLICATION_JSON_VALUE})
 	public String asdf() {
 		TestBean tb = new TestBean();
 		tb.name = "ASDF";
